@@ -81,24 +81,25 @@ class GestorTarea:
         return False
     
 
-    # metodo para enlistar las tareas
+    # Método para enlistar todas las tareas
     def enlistar_tareas(self):
+        # Retornamos la lista completa de tareas almacenadas en el gestor
         return self.tareas
     
 
+    # Método para enlistar tareas pendientes
     def enlistar_tareas_pendientes(self):
+        # Generamos una lista que contiene solo las tareas que no están completadas
+        tareas_pendientes = [tarea for tarea in self.tareas if not tarea.completada]
         
-        return [tarea for tarea in self.tareas if not tarea.completada]
+        # Retornamos la lista de tareas pendientes
+        return tareas_pendientes
     
 
-
+    # Método para filtrar tareas por prioridad
     def filtrar_prioridad(self, prioridad):
-
-        return [tarea for tarea in self.tareas if tarea.prioridad == prioridad]
-    
-
-
-    
-
-
-
+        # Generamos una lista que contiene solo las tareas con la prioridad que se busca
+        tareas_filtradas = [tarea for tarea in self.tareas if tarea.prioridad == prioridad]
+        
+        # Retornamos la lista de tareas filtradas por prioridad
+        return tareas_filtradas
